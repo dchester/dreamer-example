@@ -1,0 +1,27 @@
+{
+  "name": "dreamer-example",
+  "version": "0.0.1",
+  "author": "David Chester <david@fmail.co.uk>",
+  "description": "Example project using Dreamer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dchester/dreamer-example.git"
+  },
+  "keywords": [
+    "example",
+    "dreamer",
+    "rest",
+    "framework",
+    "markdown"
+  ],
+  "dependencies" : {
+    "dreamer"   :  "https://github.com/dchester/dreamer/archive/master.tar.gz",
+  },
+  "devDependencies": {
+    "nodeunit"    :  "*"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.8"
+  }
+}
