@@ -4,14 +4,20 @@ Example REST web service using the [Dreamer](https://github.com/dchester/dreamer
 
 ## Installation and Setup
 
+Clone the repository:
+```
+$ git clone https://github.com/dchester/dreamer-example.git
+```
+
 Install dependencies:
 
-```bash
+```
+$ cd dreamer-example
 $ npm install
 ```
 
 Inspect the schema:
-```bash
+```
 $ node node_modules/dreamer/bin/dreamer schema
 ┌─────────────┬─────────┬───────┐
 │ blogs       │ type    │ extra │
@@ -24,7 +30,7 @@ $ node node_modules/dreamer/bin/dreamer schema
 ```
 
 Inspect resources listing:
-```bash
+```
 $ node node_modules/dreamer/bin/dreamer resources
 ┌────────┬────────────────────────────────────────────┬────────┬──────────┐
 │ method │ path                                       │ action │ model    │
@@ -40,7 +46,7 @@ $ node node_modules/dreamer/bin/dreamer resources
 
 Initialize the database:
 
-```bash
+```
 $ node node_modules/dreamer/bin/dreamer schema-sync
 
 Executing: CREATE TABLE IF NOT EXISTS `blogs` (`name` VARCHAR(255) NOT NULL, `description` VARCHAR(255) NOT NULL, `author_id` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT);
@@ -52,7 +58,7 @@ success
 
 Start up the server:
 
-```bash
+```
 $ node node_modules/dreamer/bin/dreamer run
 ```
 
