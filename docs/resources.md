@@ -10,7 +10,6 @@ Create a new author
 
 name | required? | description
 -----|-----------|------------
-name | required | Name of the blog
 name | required | Full legal name
 email | required | Email address
 handle | required | Author handle
