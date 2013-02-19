@@ -6,12 +6,12 @@ Example REST web service using the Dreamer framework.  We implement a web servic
 
 Install dependencies:
 
-```
+```bash
 $ npm install
 ```
 
 Inspect the schema:
-```
+```bash
 $ node node_modules/dreamer/bin/dreamer schema
 ┌─────────────┬─────────┬───────┐
 │ blogs       │ type    │ extra │
@@ -24,7 +24,7 @@ $ node node_modules/dreamer/bin/dreamer schema
 ```
 
 Inspect resources listing:
-```
+```bash
 $ node node_modules/dreamer/bin/dreamer resources
 ┌────────┬────────────────────────────────────────────┬────────┬──────────┐
 │ method │ path                                       │ action │ model    │
@@ -40,7 +40,7 @@ $ node node_modules/dreamer/bin/dreamer resources
 
 Initialize the database:
 
-```
+```bash
 $ node node_modules/dreamer/bin/dreamer schema-sync
 
 Executing: CREATE TABLE IF NOT EXISTS `blogs` (`name` VARCHAR(255) NOT NULL, `description` VARCHAR(255) NOT NULL, `author_id` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT);
@@ -52,7 +52,7 @@ success
 
 Start up the server:
 
-```
+```bash
 $ node node_modules/dreamer/bin/dreamer run
 ```
 
@@ -61,7 +61,7 @@ $ node node_modules/dreamer/bin/dreamer run
 See the REST API in [docs/resources.md](docs/resources.md).  Let's try reading and writing some data.
 
 Add an author:
-```
+```bash
 $ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors -d '{
     "name": "James Cooper",
     "email": "james@cooperindustries.biz",
@@ -71,25 +71,25 @@ $ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors 
 ```
 
 Create a blog:
-```
-$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d '{ \
-    "name": "The Life of James Cooper", \
-    "description": "Trials", \
-    "author_id": "1" \
+```bash
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d '{
+    "name": "The Life of James Cooper",
+    "description": "Trials",
+    "author_id": "1"
 }'
 ```
 
 Create an entry:
-```
-$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{ \
-    "title": "Waiting for Eighteen Hundred Hours", \
-    "content": "If you only knew...", \
+```bash
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{
+    "title": "Waiting for Eighteen Hundred Hours",
+    "content": "If you only knew..."
 }'
 ```
 
 Read back what we wrote up in:
 
-```
+```bash
 $ curl http://localhost:3000/authors
 $ curl http://localhost:3000/blogs
 $ curl http://localhost:3000/blogs/1/entries
