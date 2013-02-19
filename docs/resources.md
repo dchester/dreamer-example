@@ -1,5 +1,7 @@
 # Routes
 
+***
+
 ### POST /authors
 
 Create a new author
@@ -7,7 +9,7 @@ Create a new author
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 name | required | Name of the blog
 name | required | Full legal name
 email | required | Email address
@@ -15,9 +17,13 @@ handle | required | Author handle
 signup_date | required | Date of user sign-up
 website | optional | Author website
 
+***
+
 ### GET /authors/:author_id
 
 Get details about an author
+
+***
 
 ### POST /blogs
 
@@ -26,15 +32,17 @@ Create a new blog
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 name | required | Name of the blog
 author_id | required | Author of the blog
 description | optional | Description of the blog
 
+***
+
 ### GET /blogs
 
 ###### Example Response
-```
+```json
 [
   {
     "id": 1000,
@@ -43,12 +51,14 @@ description | optional | Description of the blog
 ]
 ```
 
+***
+
 ### GET /blogs/:blog_id
 
 Get details about a blog
 
 ###### Example Response
-```
+```json
 {
   "id": 1000,
   "name": "The trials of being James",
@@ -60,6 +70,8 @@ Get details about a blog
 }
 ```
 
+***
+
 ### POST /blogs/:blog_id
 
 Edit details about a blog
@@ -67,10 +79,12 @@ Edit details about a blog
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 name | required | Name of the blog
 description | optional | Description of the blog
 
+
+***
 
 ### POST /blogs/:blog_id/entries
 
@@ -79,28 +93,32 @@ Create a new blog entry
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 title | required | Blog entry title
 content | required | Blog entry content
 post_time | required | Time of entry
 
-### PUT /blogs/:blog_id/entries/:id
+***
+
+### POST /blogs/:blog_id/entries/:id
 
 Edit an existing blog entry
 
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 title | required | Blog entry title
 content | required | Blog entry content
+
+***
 
 ### GET /blogs/:blog_id/entries
 
 Get the entries for a blog
 
 ###### Example Response
-```
+```json
 [
   {
     "id": 1000,
@@ -110,12 +128,14 @@ Get the entries for a blog
 ]
 ```
 
+***
+
 ### GET /blogs/:blog_id/entries/:entry_id
 
 Get details about a blog entry
 
 ###### Example Response
-```
+```json
 {
   "id": 1000,
   "title": "Eighteen Hundred Hours",
@@ -124,6 +144,8 @@ Get details about a blog entry
 }
 ```
 
+***
+
 ### POST /blogs/:blog_id/entries/:entry_id/comments
 
 Post a new comment
@@ -131,17 +153,19 @@ Post a new comment
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 author_id | required | Author of the comment
 post_time | required | Time of the posting
 content | required | Comment content
+
+***
 
 ### GET /blogs/:blog_id/entries/:entry_id/comments
 
 Get comments for a blog post
 
 ###### Example Response
-```
+```json
 [
   {
     "author_id": 1000,

@@ -1,19 +1,18 @@
 # Dreamer Example
 
-Example REST web service using the Dreamer framework.  We implement a web service for a web log.
+Example REST web service using the Dreamer framework.  We implement a backend RESTful service for a web log.  Find the schema in this project at [docs/schema.md](docs/schema.md) and the interface at [docs/resources.md](docs/resources.md)
 
-## Installation
+## Installation and Setup
 
 Install dependencies:
 
-```
+```bash
 $ npm install
 ```
 
 Inspect the schema:
-```
+```bash
 $ node node_modules/dreamer/bin/dreamer schema
-
 ┌─────────────┬─────────┬───────┐
 │ blogs       │ type    │ extra │
 ├─────────────┼─────────┼───────┤
@@ -21,36 +20,12 @@ $ node node_modules/dreamer/bin/dreamer schema
 │ description │ string  │       │
 │ author_id   │ integer │       │
 └─────────────┴─────────┴───────┘
-┌─────────────┬────────┬──────────────┐
-│ authors     │ type   │ extra        │
-├─────────────┼────────┼──────────────┤
-│ name        │ string │              │
-│ handle      │ string │ alpha,unique │
-│ email       │ string │ email        │
-│ website     │ string │ nullable     │
-│ signup_date │ date   │              │
-└─────────────┴────────┴──────────────┘
-┌───────────┬────────┬───────┐
-│ entries   │ type   │ extra │
-├───────────┼────────┼───────┤
-│ title     │ string │       │
-│ post_time │ date   │       │
-│ content   │ string │       │
-└───────────┴────────┴───────┘
-┌───────────┬─────────┬───────┐
-│ comments  │ type    │ extra │
-├───────────┼─────────┼───────┤
-│ post_time │ date    │       │
-│ author_id │ integer │       │
-│ entry_id  │ integer │       │
-│ content   │ text    │ text  │
-└───────────┴─────────┴───────┘
+...
 ```
 
 Inspect resources listing:
-```
+```bash
 $ node node_modules/dreamer/bin/dreamer resources
-
 ┌────────┬────────────────────────────────────────────┬────────┬──────────┐
 │ method │ path                                       │ action │ model    │
 ├────────┼────────────────────────────────────────────┼────────┼──────────┤
@@ -60,29 +35,12 @@ $ node node_modules/dreamer/bin/dreamer resources
 ├────────┼────────────────────────────────────────────┼────────┼──────────┤
 │ POST   │ /blogs                                     │ create │ blogs    │
 ├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs                                     │ list   │ blogs    │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs/:blog_id                            │ read   │ blogs    │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ POST   │ /blogs/:blog_id                            │ update │ blogs    │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ POST   │ /blogs/:blog_id/entries                    │ create │ entries  │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ PUT    │ /blogs/:blog_id/entries/:id                │ update │ entries  │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs/:blog_id/entries                    │ list   │ entries  │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs/:blog_id/entries/:entry_id          │ read   │ entries  │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ POST   │ /blogs/:blog_id/entries/:entry_id/comments │ create │ comments │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs/:blog_id/entries/:entry_id/comments │ list   │ comments │
-└────────┴────────────────────────────────────────────┴────────┴──────────┘
+...
 ```
 
 Initialize the database:
 
-```
+```bash
 $ node node_modules/dreamer/bin/dreamer schema-sync
 
 Executing: CREATE TABLE IF NOT EXISTS `blogs` (`name` VARCHAR(255) NOT NULL, `description` VARCHAR(255) NOT NULL, `author_id` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT);
@@ -94,20 +52,17 @@ success
 
 Start up the server:
 
-```
+```bash
 $ node node_modules/dreamer/bin/dreamer run
 ```
-## Where's the code?
-
-There's no code!  It's Markdown all the way through.  See the Dreamer framework for more.
 
 ## REST API
 
 See the REST API in [docs/resources.md](docs/resources.md).  Let's try reading and writing some data.
 
 Add an author:
-```
-curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors -d '{
+```bash
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors -d '{
     "name": "James Cooper",
     "email": "james@cooperindustries.biz",
     "handle": "jamez",
@@ -116,27 +71,31 @@ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors -d
 ```
 
 Create a blog:
-```
-curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d '{ \
-    "name": "The Life of James Cooper", \
-    "description": "Trials", \
-    "author_id": "1" \
+```bash
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d '{
+    "name": "The Life of James Cooper",
+    "description": "Trials",
+    "author_id": "1"
 }'
 ```
 
 Create an entry:
-```
-curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{ \
-    "title": "Waiting for Eighteen Hundred Hours", \
-    "content": "If you only knew...", \
+```bash
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{
+    "title": "Waiting for Eighteen Hundred Hours",
+    "content": "If you only knew...",
+    "post_time": "2013-02-01"
 }'
 ```
 
 Read back what we wrote up in:
 
-```
-curl http://localhost:3000/authors
-curl http://localhost:3000/blogs
-curl http://localhost:3000/blogs/1/entries
-```
+```bash
 
+$ curl http://localhost:3000/blogs
+$ curl http://localhost:3000/blogs/1/entries
+$ curl http://localhost:3000/authors/1
+```
+## Where's the code?
+
+There's no code!  It's Markdown all the way through.  The schema is defined in [docs/schema.md](docs/schema.md) and the interface in [docs/resources.md](docs/resources.md).  See the [Dreamer](https://github.com/dchester/dreamer) framework for more.
