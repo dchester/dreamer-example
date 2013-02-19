@@ -62,7 +62,7 @@ See the REST API in [docs/resources.md](docs/resources.md).  Let's try reading a
 
 Add an author:
 ```
-curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors -d '{
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors -d '{
     "name": "James Cooper",
     "email": "james@cooperindustries.biz",
     "handle": "jamez",
@@ -72,7 +72,7 @@ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors -d
 
 Create a blog:
 ```
-curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d '{ \
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d '{ \
     "name": "The Life of James Cooper", \
     "description": "Trials", \
     "author_id": "1" \
@@ -81,7 +81,7 @@ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d '
 
 Create an entry:
 ```
-curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{ \
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{ \
     "title": "Waiting for Eighteen Hundred Hours", \
     "content": "If you only knew...", \
 }'
@@ -90,9 +90,9 @@ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/en
 Read back what we wrote up in:
 
 ```
-curl http://localhost:3000/authors
-curl http://localhost:3000/blogs
-curl http://localhost:3000/blogs/1/entries
+$ curl http://localhost:3000/authors
+$ curl http://localhost:3000/blogs
+$ curl http://localhost:3000/blogs/1/entries
 ```
 ## Where's the code?
 
