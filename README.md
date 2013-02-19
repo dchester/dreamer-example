@@ -1,6 +1,6 @@
 # Dreamer Example
 
-Example REST web service using the Dreamer framework.  We implement a web service for a web log.
+Example REST web service using the Dreamer framework.  We implement a backend RESTful service for a web log.  Find the schema in this project at [docs/schema.md](docs/schema.md) and the interface at [docs/resources.md](docs/resources.md)
 
 ## Installation and Setup
 
@@ -81,7 +81,7 @@ $ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d
 
 Create an entry:
 ```bash
-curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{
+$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{
     "title": "Waiting for Eighteen Hundred Hours",
     "content": "If you only knew...",
     "post_time": "2013-02-01"
@@ -91,11 +91,11 @@ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/en
 Read back what we wrote up in:
 
 ```bash
-$ curl http://localhost:3000/authors
+
 $ curl http://localhost:3000/blogs
 $ curl http://localhost:3000/blogs/1/entries
+$ curl http://localhost:3000/authors/1
 ```
 ## Where's the code?
 
-There's no code!  It's Markdown all the way through.  The schema is defined in `docs/schema.md` and the interface in `docs/resources.md`.  See the Dreamer framework for more.
-
+There's no code!  It's Markdown all the way through.  The schema is defined in [docs/schema.md](docs/schema.md) and the interface in [docs/resources.md](docs/resources.md).  See the [Dreamer](https://github.com/dchester/dreamer) framework for more.
