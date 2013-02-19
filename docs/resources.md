@@ -1,5 +1,7 @@
 # Routes
 
+***
+
 ### POST /authors
 
 Create a new author
@@ -40,7 +42,7 @@ description | optional | Description of the blog
 ### GET /blogs
 
 ###### Example Response
-```
+```json
 [
   {
     "id": 1000,
@@ -56,7 +58,7 @@ description | optional | Description of the blog
 Get details about a blog
 
 ###### Example Response
-```
+```json
 {
   "id": 1000,
   "name": "The trials of being James",
@@ -116,7 +118,7 @@ content | required | Blog entry content
 Get the entries for a blog
 
 ###### Example Response
-```
+```json
 [
   {
     "id": 1000,
@@ -133,7 +135,7 @@ Get the entries for a blog
 Get details about a blog entry
 
 ###### Example Response
-```
+```json
 {
   "id": 1000,
   "title": "Eighteen Hundred Hours",
@@ -163,7 +165,7 @@ content | required | Comment content
 Get comments for a blog post
 
 ###### Example Response
-```
+```json
 [
   {
     "author_id": 1000,
