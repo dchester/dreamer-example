@@ -81,9 +81,10 @@ $ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs -d
 
 Create an entry:
 ```bash
-$ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{
+curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{
     "title": "Waiting for Eighteen Hundred Hours",
-    "content": "If you only knew..."
+    "content": "If you only knew...",
+    "post_time": "2013-02-01"
 }'
 ```
 
