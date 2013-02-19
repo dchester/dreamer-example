@@ -7,7 +7,7 @@ Create a new author
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 name | required | Name of the blog
 name | required | Full legal name
 email | required | Email address
@@ -26,7 +26,7 @@ Create a new blog
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 name | required | Name of the blog
 author_id | required | Author of the blog
 description | optional | Description of the blog
@@ -67,7 +67,7 @@ Edit details about a blog
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 name | required | Name of the blog
 description | optional | Description of the blog
 
@@ -79,7 +79,7 @@ Create a new blog entry
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 title | required | Blog entry title
 content | required | Blog entry content
 post_time | required | Time of entry
@@ -91,7 +91,7 @@ Edit an existing blog entry
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 title | required | Blog entry title
 content | required | Blog entry content
 
@@ -131,7 +131,7 @@ Post a new comment
 ###### Request Parameters
 
 name | required? | description
------+-----------+------------
+-----|-----------|------------
 author_id | required | Author of the comment
 post_time | required | Time of the posting
 content | required | Comment content
