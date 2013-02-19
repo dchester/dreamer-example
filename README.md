@@ -1,6 +1,6 @@
 # Dreamer Example
 
-Example REST web service using the Dreamer framework.  We implement a backend RESTful service for a web log.  Find the schema in this project at [docs/schema.md](docs/schema.md) and the interface at [docs/resources.md](docs/resources.md)
+Example REST web service using the [Dreamer](https://github.com/dchester/dreamer) framework.  We implement a backend RESTful service for a web log.  Find the schema in this project at [docs/schema.md](docs/schema.md) and the interface at [docs/resources.md](docs/resources.md)
 
 ## Installation and Setup
 
