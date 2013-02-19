@@ -2,7 +2,7 @@
 
 Example REST web service using the Dreamer framework.  We implement a web service for a web log.
 
-## Installation
+## Installation and Setup
 
 Install dependencies:
 
@@ -13,7 +13,6 @@ $ npm install
 Inspect the schema:
 ```
 $ node node_modules/dreamer/bin/dreamer schema
-
 ┌─────────────┬─────────┬───────┐
 │ blogs       │ type    │ extra │
 ├─────────────┼─────────┼───────┤
@@ -21,36 +20,12 @@ $ node node_modules/dreamer/bin/dreamer schema
 │ description │ string  │       │
 │ author_id   │ integer │       │
 └─────────────┴─────────┴───────┘
-┌─────────────┬────────┬──────────────┐
-│ authors     │ type   │ extra        │
-├─────────────┼────────┼──────────────┤
-│ name        │ string │              │
-│ handle      │ string │ alpha,unique │
-│ email       │ string │ email        │
-│ website     │ string │ nullable     │
-│ signup_date │ date   │              │
-└─────────────┴────────┴──────────────┘
-┌───────────┬────────┬───────┐
-│ entries   │ type   │ extra │
-├───────────┼────────┼───────┤
-│ title     │ string │       │
-│ post_time │ date   │       │
-│ content   │ string │       │
-└───────────┴────────┴───────┘
-┌───────────┬─────────┬───────┐
-│ comments  │ type    │ extra │
-├───────────┼─────────┼───────┤
-│ post_time │ date    │       │
-│ author_id │ integer │       │
-│ entry_id  │ integer │       │
-│ content   │ text    │ text  │
-└───────────┴─────────┴───────┘
+...
 ```
 
 Inspect resources listing:
 ```
 $ node node_modules/dreamer/bin/dreamer resources
-
 ┌────────┬────────────────────────────────────────────┬────────┬──────────┐
 │ method │ path                                       │ action │ model    │
 ├────────┼────────────────────────────────────────────┼────────┼──────────┤
@@ -60,24 +35,7 @@ $ node node_modules/dreamer/bin/dreamer resources
 ├────────┼────────────────────────────────────────────┼────────┼──────────┤
 │ POST   │ /blogs                                     │ create │ blogs    │
 ├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs                                     │ list   │ blogs    │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs/:blog_id                            │ read   │ blogs    │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ POST   │ /blogs/:blog_id                            │ update │ blogs    │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ POST   │ /blogs/:blog_id/entries                    │ create │ entries  │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ PUT    │ /blogs/:blog_id/entries/:id                │ update │ entries  │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs/:blog_id/entries                    │ list   │ entries  │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs/:blog_id/entries/:entry_id          │ read   │ entries  │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ POST   │ /blogs/:blog_id/entries/:entry_id/comments │ create │ comments │
-├────────┼────────────────────────────────────────────┼────────┼──────────┤
-│ GET    │ /blogs/:blog_id/entries/:entry_id/comments │ list   │ comments │
-└────────┴────────────────────────────────────────────┴────────┴──────────┘
+...
 ```
 
 Initialize the database:
@@ -97,9 +55,6 @@ Start up the server:
 ```
 $ node node_modules/dreamer/bin/dreamer run
 ```
-## Where's the code?
-
-There's no code!  It's Markdown all the way through.  See the Dreamer framework for more.
 
 ## REST API
 
@@ -139,4 +94,7 @@ curl http://localhost:3000/authors
 curl http://localhost:3000/blogs
 curl http://localhost:3000/blogs/1/entries
 ```
+## Where's the code?
+
+There's no code!  It's Markdown all the way through.  The schema is defined in `docs/schema.md` and the interface in `docs/resources.md`.  See the Dreamer framework for more.
 
