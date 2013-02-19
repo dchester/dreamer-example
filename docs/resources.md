@@ -15,9 +15,13 @@ handle | required | Author handle
 signup_date | required | Date of user sign-up
 website | optional | Author website
 
+***
+
 ### GET /authors/:author_id
 
 Get details about an author
+
+***
 
 ### POST /blogs
 
@@ -31,6 +35,8 @@ name | required | Name of the blog
 author_id | required | Author of the blog
 description | optional | Description of the blog
 
+***
+
 ### GET /blogs
 
 ###### Example Response
@@ -42,6 +48,8 @@ description | optional | Description of the blog
   }
 ]
 ```
+
+***
 
 ### GET /blogs/:blog_id
 
@@ -60,6 +68,8 @@ Get details about a blog
 }
 ```
 
+***
+
 ### POST /blogs/:blog_id
 
 Edit details about a blog
@@ -71,6 +81,8 @@ name | required? | description
 name | required | Name of the blog
 description | optional | Description of the blog
 
+
+***
 
 ### POST /blogs/:blog_id/entries
 
@@ -84,7 +96,9 @@ title | required | Blog entry title
 content | required | Blog entry content
 post_time | required | Time of entry
 
-### PUT /blogs/:blog_id/entries/:id
+***
+
+### POST /blogs/:blog_id/entries/:id
 
 Edit an existing blog entry
 
@@ -94,6 +108,8 @@ name | required? | description
 -----|-----------|------------
 title | required | Blog entry title
 content | required | Blog entry content
+
+***
 
 ### GET /blogs/:blog_id/entries
 
@@ -110,6 +126,8 @@ Get the entries for a blog
 ]
 ```
 
+***
+
 ### GET /blogs/:blog_id/entries/:entry_id
 
 Get details about a blog entry
@@ -124,6 +142,8 @@ Get details about a blog entry
 }
 ```
 
+***
+
 ### POST /blogs/:blog_id/entries/:entry_id/comments
 
 Post a new comment
@@ -135,6 +155,8 @@ name | required? | description
 author_id | required | Author of the comment
 post_time | required | Time of the posting
 content | required | Comment content
+
+***
 
 ### GET /blogs/:blog_id/entries/:entry_id/comments
 
