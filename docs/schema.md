@@ -25,6 +25,7 @@ Blog entries.
 
 ```
 - title
+- blog_id
 - post_time
 - content
 ```

@@ -14,11 +14,8 @@
     "framework",
     "markdown"
   ],
-  "dependencies" : {
-    "dreamer"   :  "https://github.com/dchester/dreamer/archive/master.tar.gz",
-  },
-  "devDependencies": {
-    "nodeunit"    :  "*"
+  "dependencies": {
+    "dreamer":  "https://github.com/dchester/dreamer/archive/master.tar.gz"
   },
   "license": "MIT",
   "engines": {
