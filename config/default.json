@@ -1,0 +1,9 @@
+{
+  "database": {
+    "dialect": "sqlite",
+    "storage": "/tmp/dreamer-example.sqlite"
+  },
+  "server": {
+    "port": 3000
+  }
+}
