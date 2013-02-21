@@ -17,7 +17,7 @@ People who write blogs and comment on them.
 - handle       alpha,unique
 - email        email
 - website      nullable
-- signup_date
+- signup_date  default=now
 ```
 
 ### Entries
@@ -34,9 +34,9 @@ Blog entries.
 Comments on blog entries
 
 ```
-- post_time
+- post_time  default=now
 - author_id
 - entry_id
-- content   text
+- content    text
 ```
 

@@ -13,7 +13,20 @@ name | required? | description
 name | required | Full legal name
 email | required | Email address
 handle | required | Author handle
-signup_date | required | Date of user sign-up
+website | optional | Author website
+
+***
+
+### POST /authors/:author_id
+
+Update details about an author
+
+###### Request Parameters
+
+name | required? | description
+-----|-----------|------------
+name | required | Full legal name
+email | required | Email address
 website | optional | Author website
 
 ***
@@ -95,7 +108,6 @@ name | required? | description
 -----|-----------|------------
 title | required | Blog entry title
 content | required | Blog entry content
-post_time | required | Time of entry
 
 ***
 
@@ -154,7 +166,6 @@ Post a new comment
 name | required? | description
 -----|-----------|------------
 author_id | required | Author of the comment
-post_time | required | Time of the posting
 content | required | Comment content
 
 ***
