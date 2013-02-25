@@ -6,7 +6,7 @@ Whole entire blogs.
 ```
 - name
 - description
-- author_id
+- author_id    fk=authors.id
 ```
 
 ### Authors
@@ -25,8 +25,8 @@ Blog entries.
 
 ```
 - title
-- blog_id
-- post_time
+- blog_id    fk=blogs.id
+- post_time  default=now
 - content
 ```
 
@@ -35,8 +35,9 @@ Comments on blog entries
 
 ```
 - post_time  default=now
-- author_id
-- entry_id
+- author_id  fk=authors.id
+- entry_id   fk=entries.id
 - content    text
 ```
+
 

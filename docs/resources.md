@@ -151,7 +151,13 @@ Get details about a blog entry
   "id": 1000,
   "title": "Eighteen Hundred Hours",
   "content": "Here's what I want to tell you ...",
-  "post_time": "2012-01-01 14:27:03"
+  "post_time": "2012-01-01 14:27:03",
+  "comments": [
+    {
+      "id": 2000,
+      "content": "good post!"
+    }
+  ]
 }
 ```
 
