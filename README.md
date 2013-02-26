@@ -71,8 +71,7 @@ Add an author:
 $ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/authors -d '{
     "name": "James Cooper",
     "email": "james@cooperindustries.biz",
-    "handle": "jamez",
-    "signup_date": "2013-01-01"
+    "handle": "jamez"
 }'
 ```
 
@@ -89,8 +88,7 @@ Create an entry:
 ```bash
 $ curl -XPOST -H "Content-Type: application/json" http://localhost:3000/blogs/1/entries -d '{
     "title": "Waiting for Eighteen Hundred Hours",
-    "content": "If you only knew...",
-    "post_time": "2013-02-01"
+    "content": "If you only knew..."
 }'
 ```
 
